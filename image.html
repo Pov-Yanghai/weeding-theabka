@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Text Overlay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+            /* Remove default body margin */
+            font-family: sans-serif;
+        }
+
+        .image-container {
+            position: relative;
+            /* Establishes positioning context for children */
+            width: 100%;
+            /* Define a height for the container, adjust as needed */
+            height: 60vh;
+            /* 60% of the viewport height */
+            overflow: hidden;
+            /* Ensures image parts outside the container are hidden */
+        }
+
+        .background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* This makes the image cover the entire container while maintaining aspect ratio */
+            display: block;
+        }
+
+        .text-overlay {
+            position: absolute;
+            /* Positions text relative to .image-container */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Centers the text perfectly */
+            text-align: center;
+            color: white;
+            /* Ensure text is readable */
+            padding: 20px;
+
+            /* Optional: Add a semi-transparent background to the text area for better readability over busy images*/
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            width: 80%;
+            /* Limits the width of the text block for better responsiveness */
+        }
+
+        /* Optional: Make text size adjust for different screen sizes */
+        @media (max-width: 600px) {
+            .text-overlay h1 {
+                font-size: 1.5rem;
+            }
+
+            .text-overlay p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <div class="image-container">
+        <!-- The actual image element is used for better control over fitting -->
+        <img src="img\image_wedding1.png" alt="Description of image" class="background-image">
+        <div class="text-overlay">
+            <h1>Beautiful Backgrounds</h1>
+            <p>This text is positioned over the image and made to be readable.</p>
+        </div>
+    </div>
+</body>
+
+</html>
