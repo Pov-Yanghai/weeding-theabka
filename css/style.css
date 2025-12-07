@@ -1,7 +1,8 @@
-/* body {
-    margin: 0;
-    font-family: sans-serif;
-} */
+body {
+    /* margin: 0;
+    font-family: sans-serif; */
+    background-color: #fae6f7;
+}
 
 .image-container {
     position: relative;
@@ -24,7 +25,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);  
+    background-color: rgba(0, 0, 0, 0.6);  
     z-index: 1; 
 }
 
@@ -53,6 +54,14 @@
   font-size: 2.5rem; 
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+.text_start_1{
+  font-family: "Moul", serif;
+  font-size: 13px;
+  font-weight: 400;
+  font-style: normal;
+  color: #cd8b06;
 }
 
 .style_text_2 {
@@ -124,7 +133,7 @@
 .style_text_1 {
   font-family: "Dangrek", sans-serif !important;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 27px;
   font-style: normal;
 }
 
