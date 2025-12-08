@@ -1,80 +1,77 @@
 body {
-    /* margin: 0;
+  /* margin: 0;
     font-family: sans-serif; */
-    background-color: #fae6f7;
+  background-color: #fae6f7;
 }
 
 .image-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Changed to 100vh to fill the whole screen height for the invitation look */
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Changed to 100vh to fill the whole screen height for the invitation look */
+  overflow: hidden;
 }
 
 .background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
- 
+
 .image-container::before {
-    content: ''; 
-    position: absolute; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);  
-    z-index: 1; 
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
 }
 
 .text-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2; 
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;  
-    
-    /* --- NEW FLEXBOX PROPERTIES FOR VERTICAL ALIGNMENT --- */
-    display: flex;
-    flex-direction: column; /* Stacks the content vertically */
-    justify-content: space-between; /* Pushes content to the top, center, and bottom */
-    align-items: center; /* Centers items horizontally */
-    text-align: center;
-    color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* --- NEW FLEXBOX PROPERTIES FOR VERTICAL ALIGNMENT --- */
+  display: flex;
+  flex-direction: column; /* Stacks the content vertically */
+  justify-content: space-between; /* Pushes content to the top, center, and bottom */
+  align-items: center; /* Centers items horizontally */
+  text-align: center;
+  color: white;
 }
 
 /* Specific text styles for your content (Khmer fonts) */
 .style_text {
-  font-size: 2.5rem; 
+  font-size: 2.5rem;
   font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .style_text_2 {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.4;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Mobile Responsiveness for Text Sizes */
 @media (max-width: 600px) {
-    .style_text {
-        font-size: 1.8rem; 
-    }
-    .style_text_2 {
-        font-size: 1.1rem; 
-    }
+  .style_text {
+    font-size: 1.8rem;
+  }
+  .style_text_2 {
+    font-size: 1.1rem;
+  }
 }
-
-
-
 
 /*** Spinner Start ***/
 #spinner {
@@ -136,6 +133,84 @@ body {
   font-style: normal;
 }
 
+/* Hello */
+
+.vireak ul li {
+  font-size: 16px;
+  text-align: justify;
+}
+
+.responsive-bg-img {
+  position: absolute;
+  bottom: 10px;
+  left: -50px;
+  transform: rotate(90deg);
+  opacity: 0.3;
+  width: 300px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (max-width: 991px) {
+  .responsive-bg-img {
+    width: 100%;
+    left: -70px;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 575px) {
+  .responsive-bg-img {
+    width: 100%;
+    left: -70px;
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .responsive-bg-img {
+    width: 80%; /* Slightly smaller than phone to allow text focus */
+    left: -20%;
+    opacity: 0.2;
+  }
+}
+
+/* Phone (max-width: 767px) */
+@media (max-width: 767px) {
+  .responsive-bg-img {
+    width: 100%;
+    left: -70px;
+    opacity: 0.5;
+  }
+}
+
+/* Khmer Text Spacing & Styling */
+.khmer-title {
+  font-family: "Moul", serif;
+  color: #cd8b06;
+}
+
+.khmer-schedule {
+  font-family: "Battambang", cursive;
+  color: #cd8b06;
+}
+
+.day-header {
+  font-family: "Moul", serif;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.schedule-item {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.battambang-thin {
+  font-family: "Battambang", system-ui;
+  font-weight: 100;
+  font-style: normal;
+}
 
 .btn-sm-square {
   width: 34px;
