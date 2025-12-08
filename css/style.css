@@ -2,7 +2,58 @@ body {
   /* margin: 0;
     font-family: sans-serif; */
   background-color: #fae6f7;
+  width: 25%;
+  margin: auto;
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+body {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  body {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  body {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    width: 100%;
+  }
+}
+
+/* Phone (max-width: 767px) */
+@media (max-width: 767px) {
+  body {
+    width: 100%;
+  }
+}
+
+/* @media (max-width: 1400px) {
+  body {
+    width: 37%;
+  }
+} */
 
 .image-container {
   position: relative;
