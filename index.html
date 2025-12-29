@@ -66,19 +66,15 @@
 
 
     <!-- Hello! Start -->
-    <div class="container-fluid position-relative py-5" id="weddingAbout">
-        <div class="position-absolute" style=" margin-top: -49px; right: 0;">
-            <img src="images\image-removebg-preview (1).png" class="img-fluid" alt=""
-                style="width: auto; transform: rotate(0deg);">
-        </div>
-        <div class="position-absolute" style="top: -10px; left: 0; transform: rotate(150deg);">
-            <img src=" " class="img-fluid" alt="" style="width: 100px; ">
-        </div>
+    <div  id="weddingAbout">
+       
+        <img src="images\image-removebg-preview (1).png" alt="" class="image" style=" z-index: -1;
+                width: 100% !important;
+                margin-top: -25px !important; " >
 
-
-        <div class="container position-relative py-5">
-            <div class="mx-auto text-center mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800;">
-                <div class="mx-auto text-center mb-5 wow fadeInUp" data-wow-delay="0.1s"
+        <div class="container position-relative ">
+            <div class="mx-auto text-center  wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800; margin-top: -25%;">
+                <div class="mx-auto text-center   wow fadeInUp" data-wow-delay="0.1s"
                     style="max-width: 800; margin-top: 15%;">
                     <h5 style="font-family: 'Moul', serif; color: #cd8b06;">សិរីមង្គលអាពាហ៍ពិពាហ៍</h5>
                 </div>
@@ -169,7 +165,7 @@
                 /*opacity: 0.7;*/
                 width: 100% !important;
                 margin-right: -100px !important;
-                margin-top: -190px !important;
+             
             }
         </style>
         <!-- Hello! End -->
@@ -181,7 +177,7 @@
     <!-- About Start -->
     <div class="container-fluid position-relative overflow-hidden mt-3">
         <img src="images\image-Picsart-BackgroundRemover.png" class="img-fluid responsive-bg-img" alt="">
-        
+
 
         <div class="container py-5 position-relative">
             <div class="row g-5 align-items-center justify-content-center">
@@ -280,14 +276,9 @@
 
     <!-- Story Start -->
     <div class="container-fluid story position-relative" id="weddingStory">
-        <!-- <div class="position-absolute" style="top: -35px; right: 0;">
-            <img src="images\image-removebg-preview.png " class="img-fluid" alt="">
-        </div>
-        <div class="position-absolute" style="top: -15px; left: 0; transform: rotate(150deg);">
-            <img src=" images\image-removebg-preview.png" class="img-fluid" alt="">
-        </div> -->
+        
         <div class="container position-relative py-5">
-              
+
             <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <h5 class="text-uppercase mb-4​ day-header" style="color: #cd8b06; font-size: 20px;"><i
                         class="bi bi-geo-fill" style="color: rgb(218, 35, 35);"></i>ទីតាំងកម្មវិធី</h5>
@@ -300,57 +291,64 @@
                     មើលផែនទី Google Map
                 </a>
             </div>
-<div class="text-center py-4">
+            <!-- <div class="text-center py-4">
     <img src="images\image-Picsart-BackgroundRemover.png" 
          class="img-fluid invitation-img animate-float" 
          alt="Wedding Invitation Image">
-</div>
+</div> -->
 
-<style>
-    /* 1. Base Styling for the Image */
-    .invitation-img {
-        max-width: 80%; /* Adjust size as needed */
-        border-radius: 15px; /* Soft edges */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle base shadow */
-        transition: transform 0.3s ease-in-out;
-    }
+            <style>
+                /* 1. Base Styling for the Image */
+                .invitation-img {
+                    max-width: 80%;
+                    /* Adjust size as needed */
+                    border-radius: 15px;
+                    /* Soft edges */
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                    /* Subtle base shadow */
+                    transition: transform 0.3s ease-in-out;
+                }
 
-    /* 2. Floating & Glowing Animation */
-    .animate-float {
-        animation: floatAndGlow 4s ease-in-out infinite;
-    }
+                /* 2. Floating & Glowing Animation */
+                .animate-float {
+                    animation: floatAndGlow 4s ease-in-out infinite;
+                }
 
-    @keyframes floatAndGlow {
-        0% {
-            transform: translateY(0px);
-            box-shadow: 0 10px 30px rgba(212, 160, 23, 0.2);
-        }
-        50% {
-            transform: translateY(-15px); /* Moves the image up */
-            /* Adds a golden pulse effect behind the image */
-            box-shadow: 0 25px 50px rgba(212, 160, 23, 0.4);
-        }
-        100% {
-            transform: translateY(0px);
-            box-shadow: 0 10px 30px rgba(212, 160, 23, 0.2);
-        }
-    }
+                @keyframes floatAndGlow {
+                    0% {
+                        transform: translateY(0px);
+                        box-shadow: 0 10px 30px rgba(212, 160, 23, 0.2);
+                    }
 
-    /* 3. Hover Effect (Interactive) */
-    .invitation-img:hover {
-        /* Pause animation and zoom slightly when user touches it */
-        animation-play-state: paused;
-        transform: scale(1.05);
-        cursor: pointer;
-    }
+                    50% {
+                        transform: translateY(-15px);
+                        /* Moves the image up */
+                        /* Adds a golden pulse effect behind the image */
+                        box-shadow: 0 25px 50px rgba(212, 160, 23, 0.4);
+                    }
 
-    /* Mobile responsiveness */
-    @media (max-width: 575px) {
-        .invitation-img {
-            max-width: 95%; /* Use more screen space on small phones */
-        }
-    }
-</style>
+                    100% {
+                        transform: translateY(0px);
+                        box-shadow: 0 10px 30px rgba(212, 160, 23, 0.2);
+                    }
+                }
+
+                /* 3. Hover Effect (Interactive) */
+                .invitation-img:hover {
+                    /* Pause animation and zoom slightly when user touches it */
+                    animation-play-state: paused;
+                    transform: scale(1.05);
+                    cursor: pointer;
+                }
+
+                /* Mobile responsiveness */
+                @media (max-width: 575px) {
+                    .invitation-img {
+                        max-width: 95%;
+                        /* Use more screen space on small phones */
+                    }
+                }
+            </style>
 
 
             <style>
@@ -398,11 +396,6 @@
                 }
             </style>
 
-
-
-
-
-           
         </div>
     </div>
     <!-- Story End -->
@@ -410,50 +403,44 @@
 
     <!--- Wedding Date -->
     <div class="container-fluid wedding-date-bg position-relative py-5">
-         
         <div class="container py-5 wow zoomIn" data-wow-delay="0.1s">
             <div class="wedding-date text-center bg-light p-5"
-                style="border-style: double !important; border: 15px solid rgba(253, 93, 93, 0.5);">
+                style="border-style: double !important; border: 5px solid #cd8b06;">
                 <div class="wedding-date-content">
                     <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4"
                         style="border-style: double;">
-                        <h4 class="text-dark text-uppercase fw-bold mb-0" style="font-size: 13px; font-family: 'Moul', serif;">ថ្ងៃព្រហស្បតិ៍ ទី ១២
+                        <h4 class="text-dark text-uppercase fw-bold mb-0"
+                            style="font-size: 13px; font-family: 'Moul', serif;">ថ្ងៃព្រហស្បតិ៍ ទី ១២
                             ខែកុម្ភៈ ឆ្នាំ ២០២៦
                         </h4>
                     </div>
-                    <!-- <h1 class="display-4">We Are Getting Married</h1>
-                    <p class="text-dark fs-5">Niloy Hotel New York , 123 West 23th Street, NY</p> -->
-                    <div class="d-flex align-items-center justify-content-center mb-5">
-                    <div class="text-dark fs-2 me-4 text-center">
-                        <div id="days">00</div>
-                        <span>Days</span>
+
+                    <div class="d-flex align-items-center justify-content-center mb-5" style="font-weight: 800;">
+                        <div class="text-dark fs-4 me-4 text-center">
+                            <div id="days">00</div>
+                            <span>Days</span>
+                        </div>
+                        <div class="text-dark fs-4 me-4 text-center">
+                            <div id="hours">00</div>
+                            <span>Hours</span>
+                        </div>
+                        <div class="text-dark fs-4 me-4 text-center">
+                            <div id="mins">00</div>
+                            <span>Mins</span>
+                        </div>
+                        <div class="text-dark fs-4 text-center">
+                            <div id="secs">00</div>
+                            <span>Secs</span>
+                        </div>
                     </div>
-                    <div class="text-dark fs-2 me-4 text-center">
-                        <div id="hours">00</div>
-                        <span>Hours</span>
-                    </div>
-                    <div class="text-dark fs-2 me-4 text-center">
-                        <div id="mins">00</div>
-                        <span>Mins</span>
-                    </div>
-                    <div class="text-dark fs-2 text-center">
-                        <div id="secs">00</div>
-                        <span>Secs</span>
-                    </div>
-                </div>
                 </div>
                 <div class="position-absolute"
                     style="top: 15%; right: -30px; transform: rotate(320deg); opacity: 0.5; z-index: 1;">
-                    <img src="images\DSC_1995.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="position-absolute"
-                    style="top: 15%; left: -10px; transform: rotate(-320deg); opacity: 0.5; z-index: 1;">
-                    <img src="images\DSC_1991.jpg" class="img-fluid" alt="">
+                    <img src=" " class="img-fluid" alt="">
                 </div>
             </div>
         </div>
     </div>
-   
 
 
 
@@ -466,13 +453,14 @@
             </div>
             <div class="col-lg-4 text-center">
                 <div class="footer-item">
-                    
-                      <p>sa tenetur tempora maxime assumenda quaerat, repellat dolor architecto veniam excepturi, corporis, dignissimos eaque?</p>
-                    </div>
+
+                    <p>sa tenetur tempora maxime assumenda quaerat, repellat dolor architecto veniam excepturi,
+                        corporis, dignissimos eaque?</p>
                 </div>
             </div>
-
         </div>
+
+    </div>
     </div>
     </div>
     </div>
@@ -486,7 +474,7 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class=" btn-md-square back-to-top"  style="background-color: #cf9500; outline: red; border: red;">
+    <a href="#" class=" btn-md-square back-to-top" style="background-color: #cf9500; outline: red; border: red;">
         <i class="fa fa-arrow-up"></i></a>
 
 
@@ -507,11 +495,11 @@
 <script>
     const weddingDate = new Date("Feb 12, 2026 07:00:00").getTime();
 
-    const countdown = setInterval(function() {
+    const countdown = setInterval(function () {
 
         const now = new Date().getTime();
         const distance = weddingDate - now;
- 
+
         const d = Math.floor(distance / (1000 * 60 * 60 * 24));
         const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
