@@ -764,3 +764,15 @@ body {
   background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
+
+
+
+ .album-img{
+  border: #cd8b06 5px double;
+  border-radius: 10px;
+ }
+
+ .rowss{
+    padding-right: hidden !important;
+    padding-left: hidden !important;
+ }
