@@ -36,7 +36,9 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome">
-
+<audio controls autoplay hidden loop id="weddingMusic">
+        <source src="video\e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
+    </audio>
 
     <div class="image-container">
         <img src="img\image_wedding1.png" alt="Description of image" class="background-image">
@@ -559,5 +561,36 @@
     }, 1000);
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const audio = document.getElementById("weddingMusic");
 
+  // Restore time
+  const savedTime = localStorage.getItem("musicTime");
+  if (savedTime) {
+    audio.currentTime = parseFloat(savedTime);
+  }
+
+  // Restore play state
+  const shouldPlay = localStorage.getItem("musicPlaying") === "true";
+  if (shouldPlay) {
+    audio.play().catch(() => {});
+  }
+
+  // Save time while playing
+  setInterval(() => {
+    if (!audio.paused) {
+      localStorage.setItem("musicTime", audio.currentTime);
+    }
+  }, 1000);
+
+  audio.addEventListener("play", () => {
+    localStorage.setItem("musicPlaying", "true");
+  });
+
+  audio.addEventListener("pause", () => {
+    localStorage.setItem("musicPlaying", "false");
+  });
+});
+</script>
 </html>
