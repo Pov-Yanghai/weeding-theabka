@@ -22,7 +22,7 @@ body {
 }
 
 @media (max-width: 600px) {
-body {
+  body {
     width: 100%;
     border: none;
   }
@@ -54,10 +54,6 @@ body {
     width: 100%;
   }
 }
-
-
-
- 
 
 @media screen and (max-width: 768px) {
   .weddingAbout {
@@ -74,7 +70,7 @@ body {
 }
 
 @media (max-width: 600px) {
-.weddingAbout {
+  .weddingAbout {
     width: 100%;
     border: none;
   }
@@ -107,15 +103,13 @@ body {
   }
 }
 
-
-
 /* @media (max-width: 1400px) {
   body {
     width: 37%;
   }
 } */
 
-.kbach_khmer{
+.kbach_khmer {
   width: 30%;
 }
 
@@ -525,72 +519,69 @@ body {
 
 /* 1. Force the parent and container to be edge-to-edge */
 .wedding-date-bg {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
 }
 
 .wedding-date-bg .container {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 /* 2. Fix the background image styling */
 .wedding-date-bg .wedding-date {
-    position: relative;
-    width: 100% !important;
-    min-height: 100vh; /* Full screen height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    
-    /* Background logic */
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0.4)
-    ),
+  position: relative;
+  width: 100% !important;
+  min-height: 100vh; /* Full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  /* Background logic */
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
     url(../images/bg-count-date.png);
-    
-    background-position: center center;
-    background-size: cover; /* This removes the pink sidebars */
-    background-repeat: no-repeat;
-    overflow: hidden;
+
+  background-position: center center;
+  background-size: cover; /* This removes the pink sidebars */
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 /* 3. Ensure the content stays on top and centered */
 .wedding-date-bg .wedding-date-content {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* Removed the massive 500px margin-top to let Flexbox handle centering */
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Removed the massive 500px margin-top to let Flexbox handle centering */
 }
 
 /* 4. Fix for the overlay to prevent it from blocking layout */
 .wedding-date-bg .wedding-date::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* 5. Fix for the date header box */
 .wedding-date-bg .wedding-date-content .d-inline-block {
-    margin-top: 0 !important; /* Overriding your inline 500px margin */
-    margin-bottom: 2rem !important;
-    border-color: rgba(255, 255, 255, 0.5) !important;
+  margin-top: 0 !important; /* Overriding your inline 500px margin */
+  margin-bottom: 2rem !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
 }
 /*** Wedding Date End ***/
 
@@ -766,14 +757,94 @@ body {
 }
 /*** copyright end ***/
 
-
-
- .album-img{
- 
+/* Base Image Style */
+.album-img {
   border-radius: 10px;
- }
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Smooth transition for both entering and leaving hover */
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
 
- .rowss{
-    padding-right: hidden !important;
-    padding-left: hidden !important;
- }
+/* Hover Effect */
+.album-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds depth on hover */
+  z-index: 10; /* Ensures the zoomed image sits above others */
+}
+
+/* Fix for "Touching the Screen" */
+.rowss {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Container for the zoom effect */
+.img-wrapper {
+  overflow: hidden; /* Prevents the zoom from overlapping other text */
+  border-radius: 10px;
+}
+
+.contact {
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-family: "Battambang", cursive;
+  color: #475521;
+  font-weight: bold !important;
+}
+
+/* Button Section */
+.button-container {
+  position: fixed;
+  bottom: 130px;
+ 
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+.invite-text {
+  color: #e6a72a;
+  font-family: "Moul", sans-serif;
+  margin-bottom: 50px;
+  font-size: 1.3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.khmer-wedding-btn {
+ 
+  text-decoration: none;
+  padding: 15px 35px;
+  font-family: "Moul", sans-serif;
+  font-size: 14px;
+  color: #ffffff !important;
+  background: linear-gradient(180deg, #ffd500 0%, #d89000 50%, #ffd500 100%);
+  clip-path: polygon(
+    8% 0%,
+    92% 0%,
+    100% 30%,
+    100% 70%,
+    92% 100%,
+    8% 100%,
+    0% 70%,
+    0% 30%
+  );
+  transition: all 0.3s ease;
+  border: none;
+}
+
+/* Animations */
+@keyframes goldGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(230, 167, 42, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(230, 167, 42, 0.8), 1px 1px 2px #000;
+  }
+}
+
+.refined-animation {
+  animation: goldGlow 2s ease-in-out infinite;
+}
