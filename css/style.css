@@ -787,11 +787,35 @@ body {
 }
 
 .contact {
-  margin-bottom: 5px;
-  font-size: 15px;
-  font-family: "calibri", sans-serif;
-  color: #475521;
-  font-weight: bold !important;
+    margin-bottom: 12px; /* Increased spacing for better touch targets */
+    font-size: 16px; /* Slightly larger for readability */
+    font-family: "Calibri", sans-serif;
+    color: #475521;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Modern way to space icon and text */
+}
+
+.contact p {
+    margin: 0; /* Critical: removes default paragraph spacing */
+    white-space: nowrap; /* Prevents phone numbers from breaking into two lines */
+}
+
+.contact i {
+    font-size: 18px; /* Makes icons slightly more prominent */
+    color: #475521; /* Matches your header color for brand consistency */
+}
+
+/* Make links look like plain text */
+.contact a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.rowss {
+    display: flex;
+    justify-content: center;
 }
 
 /* Button Section */
