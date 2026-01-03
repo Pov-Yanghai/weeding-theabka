@@ -253,6 +253,7 @@ body {
 .vireak ul li {
   font-size: 16px;
   text-align: justify;
+  text-align: center;
 }
 
 .responsive-bg-img {
