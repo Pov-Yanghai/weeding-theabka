@@ -1,401 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Moulpali&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;500;600&family=Petit+Formal+Script&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Moul&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Moul&family=Moulpali&family=Tangerine:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <title>សូមគោរពអញ្ជើញ</title>
 
     <style>
         body {
-            /* margin: 0;
-    font-family: sans-serif; */
             background-color: #fae6f7;
-            width: 25%;
+            width: 100%;
+            max-width: 500px; /* Standard mobile-first width for invitations */
             margin: auto;
-            border: #cd8b06 5px double;
+            min-height: 80vh;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        @media screen and (max-width: 768px) {
-            body {
-                width: 100%;
-                border: none;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            body {
-                width: 100%;
-                border: none;
-            }
-        }
-
-        @media (max-width: 600px) {
-            body {
-                width: 100%;
-                border: none;
-            }
-        }
-
-        @media (max-width: 991px) {
-            body {
-                width: 100%;
-                border: none;
-            }
-        }
-
-        @media (max-width: 575px) {
-            body {
-                width: 100%;
-                border: none;
-            }
-        }
-
-        @media (min-width: 768px) and (max-width: 1024px) {
-            body {
-                width: 100%;
-            }
-        }
-
-        /* Phone (max-width: 767px) */
-        @media (max-width: 767px) {
-            body {
-                width: 100%;
-            }
-        }
-
-
-        @media screen and (max-width: 768px) {
-            .weddingAbout {
-                width: 100%;
-                border: none;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .weddingAbout {
-                width: 100%;
-                border: none;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .weddingAbout {
-                width: 100%;
-                border: none;
-            }
-        }
-
-        @media (max-width: 991px) {
-            .weddingAbout {
-                width: 100%;
-                border: none;
-            }
-        }
-
-        @media (max-width: 575px) {
-            .weddingAbout {
-                width: 100%;
-                border: none;
-            }
-        }
-
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .weddingAbout {
-                width: 100%;
-            }
-        }
-
-        /* Phone (max-width: 767px) */
-        @media (max-width: 767px) {
-            .weddingAbout {
-                width: 100%;
-            }
-        }
-    </style>
-
-</head>
-
-<body>
-    <style>
-        /* 1. Video background setup */
+        /* Video Background */
         .video-bg {
             position: fixed;
-            /* Fixes it to the screen */
             top: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
+            max-width: 500px;
             height: 100%;
             object-fit: cover;
-            /* Fills screen without stretching */
             z-index: -1;
-            /* Puts it behind text */
         }
 
-        /* 2. Text container setup */
-        .box-text {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            /* Combine centering and animation starting point */
-            transform: translate(-50%, -50%);
+        /* Text Styling */
+        .header-title {
             text-align: center;
             color: #e6a72a;
             font-family: 'Moul', sans-serif;
+            margin-top: 120px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            /* Smoother shadow */
-            white-space: nowrap;
-            width: max-content;
-
-            /* Ensure the container doesn't hide the animation */
-            overflow: visible;
         }
 
-        .box-text h1 {
-            font-size: 28px;
-            /* Slightly larger for the Moul font */
-            margin: 0;
-            font-weight: bold;
-            margin-top: -230px;
-            display: block;
+        .couple-names {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            color: #e6a72a;
         }
 
-        /* Custom Animation Fix */
-        /* This ensures the 'Up' movement doesn't break the 'Center' positioning */
-        @keyframes customFadeInUp {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -40%);
-            }
-
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%);
-            }
+        .couple-names h2 {
+            font-family: "Moulpali", sans-serif;
+            font-size: 2rem;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 2.1rem;
         }
 
-        /* 1. The Entrance (Fade and Slide Up) */
-        @keyframes customFadeInUp {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -40%);
-            }
-
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%);
-            }
+        .couple-names sub {
+            font-family: 'Tangerine', cursive;
+            font-size: 30px;
+            bottom: 0;
+            margin-left: 2px;
         }
 
-        /* 2. The Elegant Glow (Gold Pulse) */
+        /* Button Section */
+        .button-container {
+            position: fixed;
+            bottom: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .invite-text {
+            color: #e6a72a;
+            font-family: 'Moul', sans-serif;
+            margin-bottom: 100px;
+            font-size: 1.3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .khmer-wedding-btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 15px 35px;
+            font-family: 'Moul', sans-serif;
+            font-size: 14px;
+            color: #ffffff !important;
+            background: linear-gradient(180deg, #ffd500 0%, #d89000 50%, #ffd500 100%);
+            clip-path: polygon(8% 0%, 92% 0%, 100% 30%, 100% 70%, 92% 100%, 8% 100%, 0% 70%, 0% 30%);
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        /* Animations */
         @keyframes goldGlow {
-
-            0%,
-            100% {
-                text-shadow: 0 0 5px rgba(230, 167, 42, 0.5);
-            }
-
-            50% {
-                text-shadow: 0 0 20px rgba(230, 167, 42, 0.8), 1px 1px 2px #000;
-            }
-        }
-
-        /* 3. The Gentle Float (Floating movement) */
-        @keyframes gentleFloat {
-
-            0%,
-            100% {
-                margin-top: 0px;
-            }
-
-            50% {
-                margin-top: -10px;
-            }
+            0%, 100% { text-shadow: 0 0 5px rgba(230, 167, 42, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(230, 167, 42, 0.8), 1px 1px 2px #000; }
         }
 
         .refined-animation {
-            /* Applying multiple animations separated by commas */
-            /* Name | Duration | Timing | Delay | Iteration | Direction */
-            animation:
-                customFadeInUp 1s ease-out forwards,
-                goldGlow 2s ease-in-out infinite,
-                gentleFloat 2s ease-in-out infinite;
-
-            position: absolute;
-            top: 48%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #e6a72a;
-            font-family: 'Moul', sans-serif;
-            white-space: nowrap;
+            animation: goldGlow 2s ease-in-out infinite;
         }
 
-        .box-text h5 {
-            font-weight: 600;
-            font-size: 15px;
-            margin: 0;
-        }
-
-        .box-text h2 {
-            font-weight: bold;
-            font-size: 30px;
-            margin-top: -80px;
-            font-family: "Moulpali", sans-serif !important;
-            line-height: 0.1rem;
-            font-weight: bold;
-            text-align: start;
-        }
-
-
-        /* Buttom */
-
-
-        /* Container to handle positioning */
-        .button-container {
-            position: fixed;
-            bottom: 120px;
-            /* Adjust height from bottom */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Styling the anchor tag to look like a button */
-        .khmer-wedding-btn {
-            display: inline-block;
-            /* Essential for <a> tags to accept padding/width */
-            text-decoration: none;
-            /* Removes the underline */
-            padding: 14px 30px;
-            font-family: 'Moul', sans-serif;
-            font-size: 10px;
-            color: #ffffff !important;
-            /* Forces white text */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            white-space: nowrap;
-            cursor: pointer;
-
-            /* Golden Gradient Background */
-            background: linear-gradient(180deg, #ffd500 0%, #d89000 50%, #ffd500 100%);
-
-            /* The Shape */
-            clip-path: polygon(8% 0%, 92% 0%,
-                    100% 30%, 100% 70%,
-                    92% 100%, 8% 100%,
-                    0% 70%, 0% 30%);
-
-            /* Shadow and Glow */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        /* Interaction Effects */
-        .khmer-wedding-btn:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .khmer-wedding-btn:active {
-            transform: scale(0.95);
-        }
+       
+        
     </style>
+</head>
 
+<body>
     <video autoplay loop muted playsinline class="video-bg">
         <source src="video/4fa40e6d-9c22-4403-9099-97cdc73c3dfa.mp4" type="video/mp4">
     </video>
 
-    <div class="box-text refined-animation">
+    <div class="header-title" data-aos="fade-down" data-aos-duration="3000">
         <h1>សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
     </div>
-    <div class="content box-text  wow fadeInUp" data-wow-delay="0.4s">
-        <h2>សម្បត្តិ <sub
-                style="font-family: 'Tangerine', cursive; font-weight: 400; font-style: normal; font-size: 25px;">Sambath</sub>
-        </h2>
-        <h2>ភក្តី <sub
-                style="font-family: 'Tangerine', cursive; font-weight: 400; font-style: normal; font-size: 25px;">Pheakdey</sub>
-        </h2>
+
+    <div class="couple-names">
+        <div data-aos="fade-left" data-aos-duration="3000">
+            <h2>ភក្តី <sub>Pheakdey</sub></h2>
+        </div>
+        <div data-aos="fade-right" data-aos-duration="2500">
+            <h2>សម្បត្តិ <sub>Sambath</sub></h2>
+        </div>
+        
     </div>
 
-
     <div class="button-container">
-        <div class="content box-text" style="margin-top: -80px;">
-            <h5>សូមគោរពអញ្ជើញ</h5>
-        </div>
-
-        <a href="index.html" onclick="startInvitation()" class="khmer-wedding-btn refined-animation">
+        <h5 class="invite-text">សូមគោរពអញ្ជើញ</h5>
+        <a href="index.html" id="openInvite" class="khmer-wedding-btn refined-animation">
             សូមចុចដើម្បីបើកសំបុត្រ
         </a>
     </div>
 
- 
+    <audio id="weddingMusic" loop autoplay controls hidden>
+        <source src="video/e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
+    </audio>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
 
+        // Music Persistence Logic
+        const audio = document.getElementById("weddingMusic");
+        
+        window.addEventListener("DOMContentLoaded", () => {
+            const savedTime = localStorage.getItem("musicTime");
+            if (savedTime) audio.currentTime = parseFloat(savedTime);
+            
+            // Note: Autoplay often requires user interaction first
+            audio.play().catch(error => console.log("Autoplay blocked until user interaction."));
+        });
 
+        setInterval(() => {
+            if (!audio.paused) localStorage.setItem("musicTime", audio.currentTime);
+        }, 1000);
 
-<audio controls loop autoplay hidden  >
-  <source src="video/e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
-</audio>
-  
-
-
+        // Page Transition Logic
+        document.getElementById('openInvite').addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetUrl = this.getAttribute('href');
+            document.body.style.transition = "opacity 0.5s ease";
+            document.body.style.opacity = "0";
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 500);
+        });
+    </script>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-<script>
-    // This starts the animation engine
-    new WOW().init();
-</script>
-
-<script>
-
-
-    document.querySelector('.khmer-wedding-btn').addEventListener('click', function (e) {
-        e.preventDefault(); // Stop the instant jump
-        const targetUrl = this.getAttribute('href');
-
-        // Add a fade-out effect to the body
-        document.body.style.transition = "opacity 0.5s ease";
-        document.body.style.opacity = "0";
-
-        // Navigate after the animation finishes
-        setTimeout(function () {
-            window.location.href = targetUrl;
-        }, 500);
-    });
-</script>
-
- 
 </html>
