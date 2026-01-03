@@ -236,9 +236,9 @@ body {
 }
 
 .style_text_2 {
-  font-family: "Dangrek", sans-serif !important;
+  font-family: "Battambang", sans-serif !important;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 15px;
   font-style: normal;
 }
 
@@ -789,7 +789,7 @@ body {
 .contact {
   margin-bottom: 5px;
   font-size: 15px;
-  font-family: "Battambang", cursive;
+  font-family: "calibri", sans-serif;
   color: #475521;
   font-weight: bold !important;
 }
