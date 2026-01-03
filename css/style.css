@@ -103,11 +103,23 @@ body {
   }
 }
 
-/* @media (max-width: 1400px) {
-  body {
-    width: 37%;
-  }
-} */
+.logo-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: -20px; /* Pulls title closer to logo */
+}
+
+.wedding-logo {
+    width: 80px; /* Size for mobile */
+    height: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+    animation: fadeInDown 2s ease;
+}
+
+/* Optional: Golden Glow for the logo */
+.logo-glow {
+    filter: drop-shadow(0 0 10px rgba(230, 167, 42, 0.6));
+}
 
 .kbach_khmer {
   width: 30%;
