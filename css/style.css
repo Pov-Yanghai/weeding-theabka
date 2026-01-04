@@ -55,6 +55,39 @@ body {
   }
 }
 
+/* 1. Base Styles (Large Desktop / Default) */
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 25%; /* Using a fixed max-width is safer than 25% for high-res screens */
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* 2. Tablets (iPad, Surface, etc.) */
+@media screen and (max-width: 1024px) {
+  .video-bg {
+    max-width: 100%; /* Removes the restriction for tablets */
+    width: 100%;
+  }
+}
+
+/* 3. Mobile Phones (iPhone, Android) */
+@media screen and (max-width: 767px) {
+  .video-bg {
+    width: 100%;
+    /* Ensures the video stays centered even if aspect ratios change */
+    object-position: center; 
+  }
+}
+ 
+
+
+
 @media screen and (max-width: 768px) {
   .weddingAbout {
     width: 100%;
@@ -104,21 +137,21 @@ body {
 }
 
 .logo-container {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: -20px; /* Pulls title closer to logo */
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -20px; /* Pulls title closer to logo */
 }
 
 .wedding-logo {
-    width: 80px; /* Size for mobile */
-    height: auto;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
-    animation: fadeInDown 2s ease;
+  width: 80px; /* Size for mobile */
+  height: auto;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+  animation: fadeInDown 2s ease;
 }
 
 /* Optional: Golden Glow for the logo */
 .logo-glow {
-    filter: drop-shadow(0 0 10px rgba(230, 167, 42, 0.6));
+  filter: drop-shadow(0 0 10px rgba(230, 167, 42, 0.6));
 }
 
 .kbach_khmer {
@@ -264,47 +297,38 @@ body {
 
 .responsive-bg-img {
   position: absolute;
-  bottom: 10px;
-  left: -50px;
-  transform: rotate(90deg);
-  opacity: 0.3;
-  width: 300px;
+  bottom: -200px;
+
+  width: 100%;
   z-index: -1;
   pointer-events: none;
 }
-
+/* 
 @media (max-width: 991px) {
   .responsive-bg-img {
     width: 100%;
-    left: -70px;
-    opacity: 0.5;
   }
 }
 
 @media (max-width: 575px) {
   .responsive-bg-img {
     width: 100%;
-    left: -70px;
-    opacity: 0.5;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .responsive-bg-img {
-    width: 80%; /* Slightly smaller than phone to allow text focus */
-    left: -20%;
+    width: 100%; 
     opacity: 0.2;
   }
 }
 
 /* Phone (max-width: 767px) */
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .responsive-bg-img {
     width: 100%;
-    left: -70px;
-    opacity: 0.5;
   }
-}
+} */
 
 /* Khmer Text Spacing & Styling */
 .khmer-title {
@@ -773,10 +797,10 @@ body {
 .album-img {
   border-radius: 10px;
   width: 100%;
-  height: auto;
+  object-fit: cover; /* Prevents image stretching */
   display: block;
-  /* Smooth transition for both entering and leaving hover */
-  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
 }
 
 /* Hover Effect */
@@ -799,42 +823,42 @@ body {
 }
 
 .contact {
-    margin-bottom: 12px; /* Increased spacing for better touch targets */
-    font-size: 16px; /* Slightly larger for readability */
-    font-family: "Calibri", sans-serif;
-    color: #475521;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Modern way to space icon and text */
+  margin-bottom: 12px; /* Increased spacing for better touch targets */
+  font-size: 16px; /* Slightly larger for readability */
+  font-family: "Calibri", sans-serif;
+  color: #475521;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Modern way to space icon and text */
 }
 
 .contact p {
-    margin: 0; /* Critical: removes default paragraph spacing */
-    white-space: nowrap; /* Prevents phone numbers from breaking into two lines */
+  margin: 0; /* Critical: removes default paragraph spacing */
+  white-space: nowrap; /* Prevents phone numbers from breaking into two lines */
 }
 
 .contact i {
-    font-size: 18px; /* Makes icons slightly more prominent */
-    color: #475521; /* Matches your header color for brand consistency */
+  font-size: 18px; /* Makes icons slightly more prominent */
+  color: #475521; /* Matches your header color for brand consistency */
 }
 
 /* Make links look like plain text */
 .contact a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .rowss {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* Button Section */
 .button-container {
   position: fixed;
   bottom: 130px;
- 
+
   text-align: center;
   width: 100%;
   z-index: 100;
@@ -849,7 +873,6 @@ body {
 }
 
 .khmer-wedding-btn {
- 
   text-decoration: none;
   padding: 15px 35px;
   font-family: "Moul", sans-serif;
