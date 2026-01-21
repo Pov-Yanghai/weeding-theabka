@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>សិរីសួស្តីអាពាហ៍ពិពាហ៍</title>
-    <link rel="icon" type="image/png" href="images\DSC_2009.jpg">
+    <link rel="icon" type="image/png" href="images/prewedding/0-komrong.jpg">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,9 +39,30 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome">
-    <audio controls autoplay hidden loop id="weddingMusic">
+    <!-- <audio controls autoplay hidden loop id="weddingMusic">
+        <source src="video/e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
+    </audio> -->
+
+
+
+    <audio id="weddingMusic"  loop >
         <source src="video/e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
     </audio>
+
+    <script>
+        const weddingAudio = document.getElementById('weddingMusic');
+
+       ​
+        document.addEventListener('click', function () {
+           ​
+            weddingAudio.play().then(() => {
+                console.log("ចម្រៀងកំពុងដើរ...");
+            }).catch(error => {
+                console.log("Browser ប្លុកការ Play:", error);
+            });
+        });
+    </script>
+
 
     <div class="image-container">
         <img src="images/prewedding/Background.jpg" alt="Description of image" class="background-image">
@@ -469,7 +490,7 @@
 
         <div class="row rowss">
             <div class="col-6 py-1" data-aos="fade-down" data-aos-duration="1500">
-                <img src="images/prewedding/0-komrong.jpg" alt="Gallery Image" class="img-fluid album-img" >
+                <img src="images/prewedding/0-komrong.jpg" alt="Gallery Image" class="img-fluid album-img">
             </div>
             <div class="col-6 py-1" data-aos="fade-down" data-aos-duration="1500">
                 <img src="images/prewedding/7-komrong.jpg" alt="Gallery Image" class="img-fluid album-img">
@@ -478,7 +499,7 @@
             <!-- <div class="col-12 my-3" data-aos="zoom-in" data-aos-duration="1500">
                 <img src="images/photo_2026-01-04_11-54-18.jpg" alt="Featured Image" class="img-fluid album-img">
             </div> -->
-            
+
 
             <div class="col-6 my-3" data-aos="fade-up" data-aos-duration="1500">
                 <img src="images/prewedding/6-komrong.jpg" alt="Gallery Image" class="img-fluid album-img">

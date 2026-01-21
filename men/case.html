@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>សិរីសួស្តីអាពាហ៍ពិពាហ៍</title>
-    <link rel="icon" type="image/png" href="images/DSC_2009.jpg">
+    <link rel="icon" type="image/png" href="../images/prewedding/0-komrong.jpg">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,13 +39,29 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome">
-    <audio controls autoplay hidden loop id="weddingMusic">
+    <!-- <audio controls autoplay hidden loop id="weddingMusic">
+        <source src="../video/e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
+    </audio> -->
+
+    <audio id="weddingMusic" loop>
         <source src="../video/e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
     </audio>
 
+    <script>
+        const weddingAudio = document.getElementById('weddingMusic');
+
+        document.addEventListener('click', function () {
+            weddingAudio.play().then(() => {
+                console.log("ចម្រៀងកំពុងដើរ...");
+            }).catch(error => {
+                console.log("Browser ប្លុកការ Play:", error);
+            });
+        });
+    </script>
+
     <div class="image-container">
         <img src="../images/prewedding/Background.jpg" alt="Description of image" class="background-image">
-        <div class="text-overlay wow ">
+        <div class="text-overlay ">
 
             <!-- top  -->
             <h1 class="style_text  text-uppercase fw-bold mb-0 mt-5" data-aos="fade-down" data-aos-duration="2000"
@@ -63,7 +79,8 @@
                     ថ្ងៃព្រហស្បតិ៍ ទី០៥ ខែកុម្ភៈ ឆ្នាំ២០២៦</h4>
 
                 <!-- bottom  -->
-                <h4 class=" text-uppercase  mb-3 style_text_2" style="color: #e6a72a; ">ភូមិ​ចំបក់ សង្កាត់ចេក ក្រុងស្វាយរៀង ខេត្តស្វាយរៀង</h4>
+                <h4 class=" text-uppercase  mb-3 style_text_2" style="color: #e6a72a; ">ភូមិ​ចំបក់ សង្កាត់ចេក
+                    ក្រុងស្វាយរៀង ខេត្តស្វាយរៀង</h4>
             </div>
         </div>
     </div>
@@ -80,15 +97,14 @@
                 width: 100% !important;">
 
         <div class="container position-relative ">
-            <div class="mx-auto text-center  wow fadeInUp" data-wow-delay="0.1s"
-                style="max-width: 800; margin-top: -40%;">
-                <div class="mx-auto text-center   wow fadeInUp" data-wow-delay="0.1s"
+            <div class="mx-auto text-center " style="max-width: 800; margin-top: -40%;">
+                <div class="mx-auto text-center   " data-aos="zoom-in" data-aos-duration="2000"
                     style="max-width: 800; margin-top: 15%;">
                     <h5 style="font-family: 'Moul', serif; color: #cd8b06;">សិរីមង្គលអាពាហ៍ពិពាហ៍</h5>
                 </div>
 
-                <div class="row d-flex justify-content-between  wow fadeInUp" style="margin-top: 61px !important;"
-                    data-wow-delay="0.5s">
+                <div class="row d-flex justify-content-between" style="margin-top: 61px !important;" data-aos="zoom-in"
+                    data-aos-duration="2000">
                     <div class="col-6 text-start">
                         <h6 style="font-family: 'Moul', serif; color: #cd8b06; font-size: 13px">លោក ព្រំ ផល្លា</h6>
                         <h6 style="font-family: 'Moul', serif; color: #cd8b06; font-size: 13px">លោកស្រី សុខ សាវី</h6>
@@ -103,7 +119,7 @@
                 <!-- ============================= -->
                 <div class="row mt-4">
                     <div class="col-lg-12">
-                        <div class=" wow fadeInUp" data-wow-delay="0.5s">
+                        <div data-aos="zoom-in" data-aos-duration="2000">
                             <h3 class=" mb-3"
                                 style="font-family: 'Moul', serif; color: #cd8b06; font-size: 15px; text-align: center;">
                                 យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ
@@ -122,8 +138,8 @@
 
                     <!-- -----===================------- -->
 
-                    <div class="row d-flex justify-content-between  wow fadeInUp"
-                        style="margin-top: 31px !important;  margin: auto;" data-wow-delay="0.5s">
+                    <div class="row d-flex justify-content-between" data-aos="zoom-in" data-aos-duration="2000"
+                        style="margin-top: 31px !important;  margin: auto;">
                         <div class="col-5 text-start text-center">
                             <h6 style="font-family: 'Moulpali', serif; font-size: 13px; color: #cd8b06;">កូនប្រុសនាម
                             </h6>
@@ -140,8 +156,8 @@
 
                     <!-- -============================= -->
 
-                    <div class="row d-flex justify-content-between  wow fadeInUp"
-                        style="margin-top: 1px !important; margin: auto;" data-wow-delay="0.5s">
+                    <div class="row d-flex justify-content-between" style="margin-top: 1px !important; margin: auto;"
+                        data-aos="zoom-in" data-aos-duration="2000">
                         <div class="col-4 ">
                             <h6 style="font-family: 'Moul', serif; color: #cd8b06; font-size: 15px">លឹម​​ ភក្តី</h6>
                         </div>
@@ -154,7 +170,7 @@
                     <!-- =========================== -->
 
                     <div class="col-lg-12 mt-4">
-                        <div class=" wow fadeInUp" data-wow-delay="0.5s">
+                        <div data-aos="zoom-in" data-aos-duration="2000">
                             <h3 class=" mb-3"
                                 style="font-family: 'Moul', serif; color: #cd8b06; font-size: 12px; text-align: center; line-height: 1.6; letter-spacing: 0.5px;">
                                 ដែលនឹងប្រព្រឹត្តទៅនៅ <br>
@@ -199,7 +215,7 @@
                                 <p class="schedule-item">ម៉ោង ០៣:០០-០៤:០០ រសៀល <br> ពិធីសែនដូនតា</p>
                                 <img src="../images/kbach_khmer.jpg" class="img-fluid kbach_khmer" alt="">
                             </div>
-                      
+
 
                             <div class="d-flex justify-content-center align-items-center flex-column mt-3">
                                 <p class="schedule-item">ម៉ោង ១២:០០-០១:០០ ថ្ងៃត្រង់ <br>
@@ -226,12 +242,13 @@
 
         <div class="container position-relative">
 
-            <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="text-center mb-5" data-aos="zoom-in" data-aos-duration="2000">
                 <h5 class="text-uppercase mb-4​ day-header" style="color: #cd8b06; font-size: 20px;"><i
                         class="bi bi-geo-fill" style="color: rgb(218, 35, 35);"></i>ទីតាំងកម្មវិធី</h5>
             </div>
 
-            <img src="../images/prewedding/image.png" class="img-fluid " alt="">
+            <img src="../images/prewedding/image.png" class="img-fluid " alt="" data-aos="zoom-in"
+                data-aos-duration="2000">
 
             <div class="container py-5 text-center">
                 <a href="https://maps.app.goo.gl/b1eiz59HeWwVvD4dA" target="_blank"
@@ -405,13 +422,13 @@
 
 
     <div class="container py-5">
-        <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="text-center mb-5" data-aos="zoom-in" data-aos-duration="2000">
             <h5 class="text-uppercase mb-4 day-header" style="color: #cd8b06; font-size: 20px;">កម្រងរូបភាព</h5>
         </div>
 
         <div class="row rowss">
             <div class="col-6 py-1" data-aos="fade-down" data-aos-duration="1500">
-                <img src="../images/prewedding/0-komrong.jpg" alt="Gallery Image" class="img-fluid album-img" >
+                <img src="../images/prewedding/0-komrong.jpg" alt="Gallery Image" class="img-fluid album-img">
             </div>
             <div class="col-6 py-1" data-aos="fade-down" data-aos-duration="1500">
                 <img src="../images/prewedding/7-komrong.jpg" alt="Gallery Image" class="img-fluid album-img">
@@ -420,7 +437,7 @@
             <!-- <div class="col-12 my-3" data-aos="zoom-in" data-aos-duration="1500">
                 <img src="images/photo_2026-01-04_11-54-18.jpg" alt="Featured Image" class="img-fluid album-img">
             </div> -->
-            
+
 
             <div class="col-6 my-3" data-aos="fade-up" data-aos-duration="1500">
                 <img src="../images/prewedding/6-komrong.jpg" alt="Gallery Image" class="img-fluid album-img">
@@ -439,7 +456,7 @@
     </div>
 
 
-    <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1500">
+    <div class="text-center mb-5" data-aos="zoom-in" data-aos-duration="2000">
         <h5 class="text-uppercase mb-4​ day-header" style="color: #cd8b06; font-size: 20px;">សេចក្តីថ្លែងអំណរគុណ</h5>
         <img src="../images/—Pngtree—thai retro pattern exotic border_9028142.png" class="img-fluid kbach_khmer" alt="">
         <p style="color: #475521; font-size: 14px; font-family: 'Battambang', cursive;" class="schedule-item">យើងខ្ញុំ
@@ -478,7 +495,7 @@
         </div>
     </div>
 
-    <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="text-center mb-5">
         <h6 class="text-uppercase mb-4​ day-header" style="color: #cd8b06; font-size: 20px;">សូមអរគុណ!</h6>
     </div>
 
