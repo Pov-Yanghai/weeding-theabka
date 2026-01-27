@@ -169,9 +169,21 @@
         </div>
     </div>
 
-    <audio id="weddingMusic" loop autoplay controls hidden>
-        <source src="video/e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
+    <audio id="weddingMusic" loop>
+        <source src="../video/e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
     </audio>
+
+    <script>
+        const weddingAudio = document.getElementById('weddingMusic');
+
+        document.addEventListener('click', function () {
+            weddingAudio.play().then(() => {
+                console.log("ចម្រៀងកំពុងដើរ...");
+            }).catch(error => {
+                console.log("Browser ប្លុកការ Play:", error);
+            });
+        });
+    </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

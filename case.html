@@ -45,16 +45,14 @@
 
 
 
-    <audio id="weddingMusic"  loop >
-        <source src="video/e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
+    <audio id="weddingMusic" loop>
+        <source src="../video/e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
     </audio>
 
     <script>
         const weddingAudio = document.getElementById('weddingMusic');
 
-       ​
         document.addEventListener('click', function () {
-           ​
             weddingAudio.play().then(() => {
                 console.log("ចម្រៀងកំពុងដើរ...");
             }).catch(error => {
