@@ -1,220 +1,805 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="km">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Moul&family=Moulpali&family=Tangerine:wght@400;700&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#390b16">
+<title>សិរីមង្គលអាពាហ៍ពិពាហ៍</title>
 
-    <title>សូមគោរពអញ្ជើញ</title>
-    <link rel="icon" type="image/png" href="images/prewedding/0-komrong.jpg">
-    <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Moul&family=Moulpali&family=Tangerine:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-        body {
-            background-color: #fae6f7;
-            width: 100%;
-            /* Use dvh to account for mobile browser address bars */
-            height: 100dvh;
-            overflow: hidden;
-            /* Prevents accidental scrolling */
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+<style>
+:root {
+    --red: #5c1023;
+    --red-dark: #21060d;
+    --gold: #e4b65e;
+    --gold-light: #ffedb4;
+    --gold-dark: #93601d;
+    --paper: #f7e8c5;
+}
 
-        /* Video Background */
-        .video-bg {
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 500px;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Main Container to handle spacing */
-        .content-wrapper {
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            /* Pushes top and bottom apart */
-            padding: 40px 20px;
-            /* Safe padding */
-        }
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
 
-        .header-title {
-            text-align: center;
-            color: #e6a72a;
-            font-family: 'Moul', sans-serif;
-            margin-top: 50px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+body {
+    font-family: 'Moulpali', serif;
+    background: var(--red-dark);
+    color: var(--gold-light);
+    overflow: hidden;
+}
 
-        .header-title h1 {
-            font-size: 1.8rem;
-        }
+/* ================= COVER ================= */
 
-        /* Centered Names Section */
-        .couple-names {
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: #e6a72a;
-            margin-top: -50px;
-        }
+.cover {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 580px;
+    margin: auto;
+    overflow: hidden;
 
-        .couple-names h2 {
-            font-family: "Moulpali", sans-serif;
-            font-size: 2.2rem;
-            margin: 5px 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            line-height: 1.4;
-        }
+    background-color: var(--red-dark); 
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(35, 5, 12, .35) 0%,
+            rgba(35, 5, 12, .12) 35%,
+            rgba(35, 5, 12, .88) 100%
+        ),
+        url("/images/prewedding1/paris.png");
+    background-repeat: no-repeat;
+    background-position: center 35%;
+    background-size: cover;
+}
+/* Double gold frame */
 
-        .couple-names sub {
-            font-family: 'Tangerine', cursive;
-            font-size: 40px;
-            vertical-align: middle;
-        }
+.cover::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid var(--gold);
+    pointer-events: none;
+    z-index: 2;
+}
 
-        /* Button Section */
-        .button-container {
-            text-align: center;
-            padding-bottom: 10px;
-            margin-bottom: 100px;
-        }
+.cover::after {
+    content: "";
+    position: absolute;
+    inset: 19px;
+    border: 1px solid rgba(255, 237, 180, .45);
+    pointer-events: none;
+    z-index: 2;
+}
 
-        .invite-text {
-            color: #e6a72a;
-            font-family: 'Moul', sans-serif;
-            margin-bottom: 30px;
-            font-size: 1.2rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+/* Traditional corner ornaments */
 
-        .khmer-wedding-btn {
-            display: inline-block;
-            text-decoration: none;
-            padding: 15px 35px;
-            font-family: 'Moul', sans-serif;
-            font-size: 14px;
-            color: #ffffff !important;
-            background: linear-gradient(180deg, #ffd500 0%, #d89000 50%, #ffd500 100%);
-            clip-path: polygon(8% 0%, 92% 0%, 100% 30%, 100% 70%, 92% 100%, 8% 100%, 0% 70%, 0% 30%);
-            transition: all 0.3s ease;
-            border: none;
-        }
+.ornament {
+    position: absolute;
+    z-index: 3;
+    width: 100px;
+    height: 100px;
+    color: var(--gold);
+    opacity: .95;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 4px #000);
+}
 
-        @keyframes goldGlow {
+.ornament.top-left {
+    top: 12px;
+    left: 12px;
+}
 
-            0%,
-            100% {
-                text-shadow: 0 0 5px rgba(230, 167, 42, 0.5);
-            }
+.ornament.top-right {
+    top: 12px;
+    right: 12px;
+    transform: scaleX(-1);
+}
 
-            50% {
-                text-shadow: 0 0 20px rgba(230, 167, 42, 0.8), 1px 1px 2px #000;
-            }
-        }
+.ornament.bottom-left {
+    bottom: 12px;
+    left: 12px;
+    transform: scaleY(-1);
+}
 
-        .refined-animation {
-            animation: goldGlow 2s ease-in-out infinite;
-        }
-    </style>
+.ornament.bottom-right {
+    bottom: 12px;
+    right: 12px;
+    transform: scale(-1);
+}
+
+.cover-content {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    padding: 58px 34px 38px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.english-label {
+    font-family: 'Tangerine', cursive;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gold-light);
+    text-shadow: 0 2px 6px #000;
+}
+
+.flower {
+    margin: 8px 0;
+    color: var(--gold);
+    font-size: 25px;
+    letter-spacing: 5px;
+}
+
+.title {
+    font-family: 'Moul', serif;
+    font-size: clamp(25px, 7vw, 34px);
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--gold-light);
+    text-shadow:
+        0 2px 2px #42101a,
+        0 4px 12px #000;
+    
+}
+
+.bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.invite-title {
+    font-family: 'Moul', serif;
+    font-size: clamp(20px, 6vw, 27px);
+    line-height: 1.8;
+    color: var(--gold-light);
+    text-shadow: 0 3px 8px #000;
+    margin-bottom: 18px;
+}
+
+/* Guest name banner */
+
+.banner {
+    width: 100%;
+    padding: 3px;
+    background: linear-gradient(
+        135deg,
+        #fff1b0,
+        #b47a2a,
+        #f7d47f,
+        #865016
+    );
+    clip-path: polygon(
+        0 50%, 6% 0, 94% 0, 100% 50%,
+        94% 100%, 6% 100%
+    );
+    filter: drop-shadow(0 4px 8px #000);
+}
+
+.banner-inner {
+    min-height: 59px;
+    padding: 12px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #fff9e9, #f4e0b6);
+    clip-path: polygon(
+        0 50%, 6% 0, 94% 0, 100% 50%,
+        94% 100%, 6% 100%
+    );
+
+    color: var(--red);
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.open-caption {
+    margin-top: 22px;
+    font-size: 17px;
+    color: var(--gold-light);
+    text-shadow: 0 2px 6px #000;
+}
+
+/* Open invitation button */
+
+.open-btn {
+    width: 70px;
+    height: 70px;
+    margin-top: 14px;
+
+    border: 2px solid var(--gold-light);
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at 35% 25%,
+        #fff1ba,
+        #d8a446 65%,
+        #855018
+    );
+
+    box-shadow:
+        0 0 0 5px rgba(92, 16, 35, .9),
+        0 0 0 6px var(--gold),
+        0 7px 20px #0009;
+
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
+
+.open-btn svg {
+    width: 33px;
+    height: 33px;
+    fill: var(--red);
+}
+
+@keyframes pulse {
+    50% {
+        box-shadow:
+            0 0 0 5px rgba(92, 16, 35, .9),
+            0 0 0 17px rgba(228, 182, 94, 0),
+            0 7px 20px #0009;
+    }
+}
+
+.small-hint {
+    margin-top: 18px;
+    font: 12px Roboto, sans-serif;
+    color: var(--gold-light);
+}
+
+/* ================= SCROLL LETTER ================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(111, 27, 47, .96),
+            rgba(24, 4, 10, .99)
+        );
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity .65s ease,
+        visibility .65s ease;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.scroll {
+    width: min(340px, 85vw);
+    filter: drop-shadow(0 18px 25px #0009);
+
+    transform: translateY(25px) scale(.85);
+    transition: transform .7s ease;
+}
+
+.overlay.show .scroll {
+    transform: translateY(0) scale(1);
+}
+
+/* Gold scroll rods */
+
+.rod {
+    height: 26px;
+    position: relative;
+    z-index: 3;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        180deg,
+        #fff4bf 0%,
+        #e9bd59 30%,
+        #98601b 70%,
+        #f5d276 100%
+    );
+
+    box-shadow: 0 4px 8px #0008;
+}
+
+.rod::before,
+.rod::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    width: 16px;
+    height: 32px;
+    border-radius: 10px;
+    background: linear-gradient(
+        #fff0ad,
+        #b47b28,
+        #f3ce6c
+    );
+}
+
+.rod::before { left: -7px; }
+.rod::after { right: -7px; }
+
+/* Parchment unroll animation */
+
+.paper {
+    height: 0;
+    margin: 0 5px;
+    overflow: hidden;
+
+    background: linear-gradient(
+        90deg,
+        #d7b77a,
+        #fff0cb 10%,
+        #fff0cb 90%,
+        #d7b77a
+    );
+
+    transition: height 1.7s cubic-bezier(.3, .7, .2, 1);
+}
+
+.overlay.show .paper {
+    height: 430px;
+}
+
+.paper-inner {
+    height: 430px;
+    padding: 13px;
+    opacity: 0;
+    transition: opacity .6s ease .9s;
+}
+
+.overlay.show .paper-inner {
+    opacity: 1;
+}
+
+.letter-frame {
+    position: relative;
+    height: 100%;
+    padding: 13px 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+    border: 2px solid #a46a20;
+    outline: 1px solid #dfb65b;
+    outline-offset: -7px;
+
+    color: var(--red);
+}
+
+.lotus {
+    color: #a56b20;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.letter-title {
+    font-family: 'Moul', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    padding-top: 14px; 
+    line-height: 2;
+    
+
+}
+
+.letter-subtitle {
+    color: #99631d;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.couple-name {
+    font-family: 'Moulpali', serif;
+    font-size: 25px;
+    line-height: 1.4;
+}
+
+.couple-name small {
+    display: block;
+    font-family: 'Tangerine', cursive;
+    font-size: 28px;
+    font-weight: 700;
+    color: #a36b24;
+    line-height: 1.2;
+}
+
+.ampersand {
+    color: #a36b24;
+    font-family: 'Tangerine', cursive;
+    font-size: 32px;
+    line-height: 1.1;
+}
+
+/* Continue and close buttons */
+
+.letter-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 40px auto 20px;
+    padding: 0 10px;
+}
+
+.continue-btn {
+    max-width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #8f5a1d;
+    background: var(--red);
+    color: #fff0c9;
+    font-family: 'Moulpali', serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.close-btn {
+    padding: 4px 12px;
+    border: none;
+    background: transparent;
+    color: #86541d;
+    font-family: 'Moulpali', serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+@media (max-height: 700px) {
+    .cover-content {
+        padding-top: 35px;
+        padding-bottom: 25px;
+    }
+
+    .title {
+        font-size: 25px;
+
+    }
+
+    .invite-title {
+        font-size: 21px;
+        margin-bottom: 10px;
+    }
+
+    .open-caption {
+        margin-top: 12px;
+    }
+
+    .open-btn {
+        width: 60px;
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    .overlay.show .paper {
+        height: 390px;
+    }
+
+    .paper-inner {
+        height: 390px;
+        padding: 10px;
+    }
+
+    .letter-frame {
+        padding: 13px 10px;
+        padding-top: 20px; 
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition-duration: .15s !important;
+    }
+}
+</style>
 </head>
 
 <body>
-    <video autoplay loop muted playsinline class="video-bg">
-        <source src="video/4fa40e6d-9c22-4403-9099-97cdc73c3dfa.mp4" type="video/mp4">
-    </video>
 
-    <div class="content-wrapper">
-        <div class="header-title" data-aos="fade-down" data-aos-duration="2000">
-            <h1>សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
-        </div>
+<!-- Traditional Khmer cover -->
 
-        <div class="couple-names">
-            <div data-aos="fade-left" data-aos-duration="2000">
-                <h2>ភក្តី <sub>Pheakdey</sub></h2>
+<main class="cover">
+
+    <!-- Decorative Khmer-inspired gold corners -->
+    <svg class="ornament top-left" viewBox="0 0 100 100" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 95 V28 Q4 4 28 4 H95"/>
+            <path d="M12 82 V31 Q12 12 31 12 H82"/>
+            <path d="M18 47 Q37 19 57 35 Q68 45 51 52 Q37 55 35 42"/>
+            <path d="M47 18 Q19 37 35 57 Q45 68 52 51 Q55 37 42 35"/>
+        </g>
+        <g fill="currentColor">
+            <path d="M30 25 Q47 25 49 41 Q35 40 30 25Z"/>
+            <path d="M25 30 Q25 47 41 49 Q40 35 25 30Z"/>
+            <circle cx="38" cy="38" r="3"/>
+        </g>
+    </svg>
+
+    <svg class="ornament top-right" viewBox="0 0 100 100" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 95 V28 Q4 4 28 4 H95"/>
+            <path d="M12 82 V31 Q12 12 31 12 H82"/>
+            <path d="M18 47 Q37 19 57 35 Q68 45 51 52 Q37 55 35 42"/>
+            <path d="M47 18 Q19 37 35 57 Q45 68 52 51 Q55 37 42 35"/>
+        </g>
+        <g fill="currentColor">
+            <path d="M30 25 Q47 25 49 41 Q35 40 30 25Z"/>
+            <path d="M25 30 Q25 47 41 49 Q40 35 25 30Z"/>
+            <circle cx="38" cy="38" r="3"/>
+        </g>
+    </svg>
+
+    <svg class="ornament bottom-left" viewBox="0 0 100 100" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 95 V28 Q4 4 28 4 H95"/>
+            <path d="M12 82 V31 Q12 12 31 12 H82"/>
+            <path d="M18 47 Q37 19 57 35 Q68 45 51 52 Q37 55 35 42"/>
+            <path d="M47 18 Q19 37 35 57 Q45 68 52 51 Q55 37 42 35"/>
+        </g>
+        <g fill="currentColor">
+            <path d="M30 25 Q47 25 49 41 Q35 40 30 25Z"/>
+            <path d="M25 30 Q25 47 41 49 Q40 35 25 30Z"/>
+            <circle cx="38" cy="38" r="3"/>
+        </g>
+    </svg>
+
+    <svg class="ornament bottom-right" viewBox="0 0 100 100" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 95 V28 Q4 4 28 4 H95"/>
+            <path d="M12 82 V31 Q12 12 31 12 H82"/>
+            <path d="M18 47 Q37 19 57 35 Q68 45 51 52 Q37 55 35 42"/>
+            <path d="M47 18 Q19 37 35 57 Q45 68 52 51 Q55 37 42 35"/>
+        </g>
+        <g fill="currentColor">
+            <path d="M30 25 Q47 25 49 41 Q35 40 30 25Z"/>
+            <path d="M25 30 Q25 47 41 49 Q40 35 25 30Z"/>
+            <circle cx="38" cy="38" r="3"/>
+        </g>
+    </svg>
+
+    <div class="cover-content">
+
+        <header>
+            <div class="english-label">Wedding Invitation</div>
+            <div class="flower">❧ ❖ ❧</div>
+
+            <h1 class="title">
+                សិរីមង្គល<br>
+                អាពាហ៍ពិពាហ៍
+            </h1>
+
+            <div class="flower">༺ ✦ ༻</div>
+        </header>
+
+        <section class="bottom">
+            <div class="invite-title">សូមគោរពអញ្ជើញ</div>
+
+            <div class="banner">
+                <div class="banner-inner" id="guestName">
+                    ភ្ញៀវកិត្តិយស
+                </div>
             </div>
-            <div data-aos="fade-right" data-aos-duration="2000">
-                <h2>សម្បត្តិ <sub>Sambath</sub></h2>
-            </div>
-        </div>
 
-        <div class="button-container" data-aos="fade-up" data-aos-duration="2000">
-            <h5 class="invite-text">សូមគោរពអញ្ជើញ</h5>
-            <a href="case.html" id="openInvite" class="khmer-wedding-btn refined-animation">
-                សូមចុចដើម្បីបើកសំបុត្រ
-            </a>
-        </div>
+            <div class="open-caption">បើកសំបុត្រអញ្ជើញ</div>
+
+            <button
+                type="button"
+                class="open-btn"
+                id="openInvite"
+                aria-label="បើកសំបុត្រអញ្ជើញ"
+                aria-haspopup="dialog"
+                aria-controls="letterOverlay">
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2 2 7v10l10 5 10-5V7L12 2zm0 2.3L18 7l-6 3.3L6 7l6-2.7zM4 8.7l7 3.9v6.9l-7-3.5V8.7zm16 0V16l-7 3.5v-6.9l7-3.9z"/>
+                </svg>
+            </button>
+
+            <div class="small-hint">
+                សូមចុចលើសំបុត្រ ដើម្បីបើក
+            </div>
+        </section>
     </div>
+</main>
 
-    <audio id="weddingMusic" loop>
-        <source src="../video/e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
-    </audio>
+<!-- Wedding music: starts after user interaction -->
 
-    <script>
-        const weddingAudio = document.getElementById('weddingMusic');
+<audio id="weddingMusic" loop preload="none">
+    <source
+        src="/video/ប្រណម.mp3"
+        type="audio/mpeg">
+</audio>
 
-        document.addEventListener('click', function () {
-            weddingAudio.play().then(() => {
-                console.log("ចម្រៀងកំពុងដើរ...");
-            }).catch(error => {
-                console.log("Browser ប្លុកការ Play:", error);
-            });
-        });
-    </script>
+<!-- Animated traditional Khmer scroll -->
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
+<div
+    class="overlay"
+    id="letterOverlay"
+    role="dialog"
+    aria-modal="true"
+    aria-label="សំបុត្រអញ្ជើញអាពាហ៍ពិពាហ៍"
+    aria-hidden="true">
 
-        // Music Persistence Logic
-        const audio = document.getElementById("weddingMusic");
+    <div class="scroll" id="scroll">
 
-        window.addEventListener("DOMContentLoaded", () => {
-            const savedTime = localStorage.getItem("musicTime");
-            if (savedTime) audio.currentTime = parseFloat(savedTime);
+        <div class="rod"></div>
 
-            // Note: Autoplay often requires user interaction first
-            audio.play().catch(error => console.log("Autoplay blocked until user interaction."));
-        });
+        <div class="paper">
+            <div class="paper-inner">
+                <div class="letter-frame">
 
-        setInterval(() => {
-            if (!audio.paused) localStorage.setItem("musicTime", audio.currentTime);
-        }, 1000);
+                    <div class="lotus">❀ ❧ ❀</div>
 
-        // Page Transition Logic
-        document.getElementById('openInvite').addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetUrl = this.getAttribute('href');
-            document.body.style.transition = "opacity 0.5s ease";
-            document.body.style.opacity = "0";
-            setTimeout(() => {
-                window.location.href = targetUrl;
-            }, 500);
-        });
-    </script>
+                    <h2 class="letter-title">
+                        សិរីមង្គល<br>
+                        អាពាហ៍ពិពាហ៍
+                    </h2>
+
+                    <div class="letter-subtitle">
+                        សូមគោរពអញ្ជើញចូលរួមជាអធិបតី
+                    </div>
+
+                    <div>
+                        <div class="couple-name">
+                            ហ៊ុនហ៊ាង
+                            <small>Hunheang</small>
+                        </div>
+
+                        <div class="ampersand">&amp;</div>
+
+                        <div class="couple-name">
+                            រចនា
+                            <small>Rachana</small>
+                        </div>
+                    </div>
+
+                    <div class="letter-subtitle">
+                        ដើម្បីចូលរួមអបអរសាទរ<br>
+                        ក្នុងថ្ងៃដ៏មានអត្ថន័យរបស់យើងខ្ញុំ
+                    </div>
+
+                    <div class="lotus">༺ ❖ ༻</div>
+
+                    <div class="letter-actions">
+                        <button
+                            type="button"
+                            class="continue-btn"
+                            id="continueBtn">
+                            បន្តទៅកាន់កម្មវិធីអាពាហ៍ពិពាហ៍
+                        </button>
+
+                        <button
+                            type="button"
+                            class="close-btn"
+                            id="closeBtn">
+                            បិទសំបុត្រ
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="rod"></div>
+
+    </div>
+</div>
+
+<script>
+/* =====================================
+   1. PERSONALIZE GUEST NAME
+   Example: index.html?name=លោក%20ដារ៉ា
+===================================== */
+
+const params = new URLSearchParams(window.location.search);
+const guest = params.get("name");
+
+if (guest && guest.trim()) {
+    document.getElementById("guestName").textContent = guest.trim();
+}
+
+/* =====================================
+   2. OPEN AND CLOSE THE LETTER
+===================================== */
+
+const openButton = document.getElementById("openInvite");
+const closeButton = document.getElementById("closeBtn");
+const continueButton = document.getElementById("continueBtn");
+const overlay = document.getElementById("letterOverlay");
+const audio = document.getElementById("weddingMusic");
+
+let previousFocus = null;
+
+function openLetter() {
+    previousFocus = document.activeElement;
+
+    overlay.classList.add("show");
+    overlay.setAttribute("aria-hidden", "false");
+
+    // Browsers allow audio playback following a user click.
+    audio.play().catch(() => {
+        // The invitation still works if audio cannot play.
+    });
+
+    // Focus a button after the opening animation begins.
+    window.setTimeout(() => closeButton.focus(), 400);
+}
+
+function closeLetter() {
+    overlay.classList.remove("show");
+    overlay.setAttribute("aria-hidden", "true");
+
+    if (previousFocus) {
+        previousFocus.focus();
+    }
+}
+
+openButton.addEventListener("click", openLetter);
+closeButton.addEventListener("click", closeLetter);
+
+/* Close when the guest clicks outside the scroll. */
+overlay.addEventListener("click", function (event) {
+    if (event.target === overlay) {
+        closeLetter();
+    }
+});
+
+/* Close using Escape. */
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && overlay.classList.contains("show")) {
+        closeLetter();
+    }
+});
+
+/* =====================================
+   3. GO TO THE WEDDING DETAILS PAGE
+===================================== */
+
+continueButton.addEventListener("click", function () {
+    window.location.href = "case.html";
+});
+</script>
+
 </body>
-
 </html>
