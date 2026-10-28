@@ -38,28 +38,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome">
-    <!-- <audio controls autoplay hidden loop id="weddingMusic">
-        <source src="video/e0e1e80604494583be03519a5fe9fd4f.mp3" type="audio/mpeg">
-    </audio> -->
-
-
-
-    <audio id="weddingMusic" loop>
-        <source src="/video/ប្រណម.mp3" type="audio/mpeg">
+<body id="weddingHome">
+    <audio id="weddingMusic" loop autoplay preload="metadata">
+        <source src="video/ប្រណម.mp3" type="audio/mpeg">
     </audio>
-
-    <script>
-        const weddingAudio = document.getElementById('weddingMusic');
-
-        document.addEventListener('click', function () {
-            weddingAudio.play().then(() => {
-                console.log("ចម្រៀងកំពុងដើរ...");
-            }).catch(error => {
-                console.log("Browser ប្លុកការ Play:", error);
-            });
-        });
-    </script>
+    <button type="button" id="musicToggle" class="music-toggle" aria-pressed="false" aria-label="Play wedding music" title="Play wedding music">♫</button>
+    <script src="js/music.js"></script>
 
 
     <div class="image-container">
@@ -82,7 +66,7 @@
                     ថ្ងៃសុក្រ ទី០៤ ខែធ្នូ ឆ្នាំ២០២៦</h4>
 
                 <!-- bottom  -->
-                <h4 class=" text-uppercase  mb-3 style_text_2" style="color: #e6a72a; ">ភូមិស្តុកកន្លែង ឃុំដីឥដ្ឋ
+                <h4 class=" text-uppercase  mb-3 style_text_2" style="color: #e6a72a; ">ភូមិស្តៅកន្លែង ឃុំដីឥដ្ឋ
                     ស្រុកកៀនស្វាយ ខេត្តកណ្តាល</h4>
             </div>
         </div>
@@ -115,7 +99,7 @@
                     </div>
 
                     <div class="col-6 text-end text_start_1">
-                        <h6 style="font-family: 'Moul', serif; color: #cd8b06; font-size: 13px">លោក ពេជ្រ ពេញ</h6>
+                        <h6 style="font-family: 'Moul', serif; color: #cd8b06; font-size: 13px">លោក ពេជ្រ ប៉េង</h6>
                         <h6 style="font-family: 'Moul', serif; color: #cd8b06; font-size: 13px">លោកស្រី នូ រដ្ឋា</h6>
                     </div>
                 </div>
@@ -179,7 +163,7 @@
                                 style="font-family: 'Moul', serif; color: #cd8b06; font-size: 12px; text-align: center; line-height: 1.6; letter-spacing: 0.5px;">
                                 ដែលនឹងប្រព្រឹត្តទៅនៅ <br>
                                 ថ្ងៃសុក្រ ទី០៤ ខែធ្នូ ឆ្នាំ២០២៦ <br>
-                                នៅគេហដ្ធានខាងស្រី ភូមិស្តុកកន្លែង ឃុំដីឥដ្ឋ <br> ស្រុកកៀនស្វាយ ខេត្តកណ្តាល
+                                នៅគេហដ្ធានខាងស្រី ភូមិស្តៅកន្លែង ឃុំដីឥដ្ឋ <br> ស្រុកកៀនស្វាយ ខេត្តកណ្តាល
                             </h3>
                         </div>
                     </div>
@@ -308,10 +292,10 @@
                         class="bi bi-geo-fill" style="color: rgb(218, 35, 35);"></i>ទីតាំងកម្មវិធី</h5>
             </div>
 
-            <img src="images/location_mi_kpenh.JPG" class="img-fluid " alt="">
+            <img src="images/prewedding1/map.png" class="img-fluid " alt="">
 
             <div class="container py-5 text-center">
-                <a href="https://maps.app.goo.gl/zaMRDV1nzayNCY3K7" target="_blank"
+                <a href="https://maps.app.goo.gl/Tif75yZzCM91piy26?g_st=it" target="_blank"
                     class="khmer-wedding-btn refined-animation">
                     មើលផែនទី Google Map
                 </a>
@@ -611,39 +595,6 @@
         document.getElementById("mins").innerHTML = toKhmerNum(m);
         document.getElementById("secs").innerHTML = toKhmerNum(s);
     }, 1000);
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const audio = document.getElementById("weddingMusic");
-
-        // Restore time
-        const savedTime = localStorage.getItem("musicTime");
-        if (savedTime) {
-            audio.currentTime = parseFloat(savedTime);
-        }
-
-        // Restore play state
-        const shouldPlay = localStorage.getItem("musicPlaying") === "true";
-        if (shouldPlay) {
-            audio.play().catch(() => { });
-        }
-
-        // Save time while playing
-        setInterval(() => {
-            if (!audio.paused) {
-                localStorage.setItem("musicTime", audio.currentTime);
-            }
-        }, 1000);
-
-        audio.addEventListener("play", () => {
-            localStorage.setItem("musicPlaying", "true");
-        });
-
-        audio.addEventListener("pause", () => {
-            localStorage.setItem("musicPlaying", "false");
-        });
-    });
 </script>
 
 </html>

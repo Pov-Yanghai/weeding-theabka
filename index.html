@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="km">
 <head>
@@ -7,7 +6,7 @@
 <meta name="theme-color" content="#390b16">
 <title>សិរីមង្គលអាពាហ៍ពិពាហ៍</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Moul&family=Moulpali&family=Tangerine:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Moul&family=Moulpali&family=Tangerine:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -19,7 +18,7 @@
     --paper: #f7e8c5;
 }
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,11 +26,12 @@
 
 html, body {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
+    height: 100dvh;
 }
 
 body {
-    font-family: 'Moulpali', serif;
+    font-family: 'Moulpali', 'Battambang', serif;
     background: var(--red-dark);
     color: var(--gold-light);
     overflow: hidden;
@@ -43,9 +43,8 @@ body {
     position: relative;
     width: 100%;
     max-width: 520px;
-    height: 100vh;
+    height: 100%;
     height: 100dvh;
-    min-height: 580px;
     margin: auto;
     overflow: hidden;
 
@@ -57,13 +56,13 @@ body {
             rgba(35, 5, 12, .12) 35%,
             rgba(35, 5, 12, .88) 100%
         ),
-        url("/images/prewedding1/paris.png");
+        url("images/prewedding1/paris.png");
     background-repeat: no-repeat;
     background-position: center 35%;
     background-size: cover;
 }
-/* Double gold frame */
 
+/* Double gold frame */
 .cover::before {
     content: "";
     position: absolute;
@@ -83,47 +82,28 @@ body {
 }
 
 /* Traditional corner ornaments */
-
 .ornament {
     position: absolute;
     z-index: 3;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     color: var(--gold);
     opacity: .95;
     pointer-events: none;
     filter: drop-shadow(0 2px 4px #000);
 }
 
-.ornament.top-left {
-    top: 12px;
-    left: 12px;
-}
-
-.ornament.top-right {
-    top: 12px;
-    right: 12px;
-    transform: scaleX(-1);
-}
-
-.ornament.bottom-left {
-    bottom: 12px;
-    left: 12px;
-    transform: scaleY(-1);
-}
-
-.ornament.bottom-right {
-    bottom: 12px;
-    right: 12px;
-    transform: scale(-1);
-}
+.ornament.top-left { top: 12px; left: 12px; }
+.ornament.top-right { top: 12px; right: 12px; transform: scaleX(-1); }
+.ornament.bottom-left { bottom: 12px; left: 12px; transform: scaleY(-1); }
+.ornament.bottom-right { bottom: 12px; right: 12px; transform: scale(-1); }
 
 .cover-content {
     position: relative;
     z-index: 4;
     width: 100%;
     height: 100%;
-    padding: 58px 34px 38px;
+    padding: 45px 24px 30px;
 
     display: flex;
     flex-direction: column;
@@ -134,29 +114,28 @@ body {
 
 .english-label {
     font-family: 'Tangerine', cursive;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 700;
     color: var(--gold-light);
     text-shadow: 0 2px 6px #000;
 }
 
 .flower {
-    margin: 8px 0;
+    margin: 4px 0;
     color: var(--gold);
-    font-size: 25px;
-    letter-spacing: 5px;
+    font-size: 20px;
+    letter-spacing: 4px;
 }
 
 .title {
     font-family: 'Moul', serif;
-    font-size: clamp(25px, 7vw, 34px);
+    font-size: clamp(22px, 6vw, 30px);
     font-weight: 400;
-    line-height: 1.8;
+    line-height: 1.6;
     color: var(--gold-light);
     text-shadow:
         0 2px 2px #42101a,
         0 4px 12px #000;
-    
 }
 
 .bottom {
@@ -168,18 +147,17 @@ body {
 
 .invite-title {
     font-family: 'Moul', serif;
-    font-size: clamp(20px, 6vw, 27px);
-    line-height: 1.8;
+    font-size: clamp(18px, 5vw, 24px);
+    line-height: 1.6;
     color: var(--gold-light);
     text-shadow: 0 3px 8px #000;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 }
 
 /* Guest name banner */
-
 .banner {
     width: 100%;
-    padding: 3px;
+    padding: 2px;
     background: linear-gradient(
         135deg,
         #fff1b0,
@@ -195,8 +173,8 @@ body {
 }
 
 .banner-inner {
-    min-height: 59px;
-    padding: 12px 30px;
+    min-height: 48px;
+    padding: 8px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,24 +186,23 @@ body {
     );
 
     color: var(--red);
-    font-size: 17px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.4;
     overflow-wrap: anywhere;
 }
 
 .open-caption {
-    margin-top: 22px;
-    font-size: 17px;
+    margin-top: 14px;
+    font-size: 15px;
     color: var(--gold-light);
     text-shadow: 0 2px 6px #000;
 }
 
 /* Open invitation button */
-
 .open-btn {
-    width: 70px;
-    height: 70px;
-    margin-top: 14px;
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
 
     border: 2px solid var(--gold-light);
     border-radius: 50%;
@@ -238,9 +215,9 @@ body {
     );
 
     box-shadow:
-        0 0 0 5px rgba(92, 16, 35, .9),
-        0 0 0 6px var(--gold),
-        0 7px 20px #0009;
+        0 0 0 4px rgba(92, 16, 35, .9),
+        0 0 0 5px var(--gold),
+        0 5px 15px #0009;
 
     display: grid;
     place-items: center;
@@ -249,27 +226,27 @@ body {
 }
 
 .open-btn svg {
-    width: 33px;
-    height: 33px;
+    width: 28px;
+    height: 28px;
     fill: var(--red);
 }
 
 @keyframes pulse {
     50% {
         box-shadow:
-            0 0 0 5px rgba(92, 16, 35, .9),
-            0 0 0 17px rgba(228, 182, 94, 0),
-            0 7px 20px #0009;
+            0 0 0 4px rgba(92, 16, 35, .9),
+            0 0 0 14px rgba(228, 182, 94, 0),
+            0 5px 15px #0009;
     }
 }
 
 .small-hint {
-    margin-top: 18px;
-    font: 12px Roboto, sans-serif;
+    margin-top: 10px;
+    font: 11px Roboto, sans-serif;
     color: var(--gold-light);
 }
 
-/* ================= SCROLL LETTER ================= */
+/* ================= SINGLE PAGE SCROLL LETTER OVERLAY ================= */
 
 .overlay {
     position: fixed;
@@ -279,7 +256,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 12px;
 
     background:
         radial-gradient(
@@ -292,9 +269,7 @@ body {
     visibility: hidden;
     pointer-events: none;
 
-    transition:
-        opacity .65s ease,
-        visibility .65s ease;
+    transition: opacity .4s ease, visibility .4s ease;
 }
 
 .overlay.show {
@@ -304,24 +279,26 @@ body {
 }
 
 .scroll {
-    width: min(340px, 85vw);
-    filter: drop-shadow(0 18px 25px #0009);
+    width: min(340px, 92vw);
+    max-height: 100dvh;
+    filter: drop-shadow(0 15px 25px #0009);
 
-    transform: translateY(25px) scale(.85);
-    transition: transform .7s ease;
+    transform: scale(.9);
+    transition: transform .4s cubic-bezier(.3, .7, .2, 1);
+    display: flex;
+    flex-direction: column;
 }
 
 .overlay.show .scroll {
-    transform: translateY(0) scale(1);
+    transform: scale(1);
 }
 
 /* Gold scroll rods */
-
 .rod {
-    height: 26px;
+    height: 20px;
     position: relative;
     z-index: 3;
-    border-radius: 15px;
+    border-radius: 12px;
 
     background: linear-gradient(
         180deg,
@@ -331,17 +308,17 @@ body {
         #f5d276 100%
     );
 
-    box-shadow: 0 4px 8px #0008;
+    box-shadow: 0 3px 6px #0008;
 }
 
 .rod::before,
 .rod::after {
     content: "";
     position: absolute;
-    top: -3px;
-    width: 16px;
-    height: 32px;
-    border-radius: 10px;
+    top: -2px;
+    width: 14px;
+    height: 24px;
+    border-radius: 8px;
     background: linear-gradient(
         #fff0ad,
         #b47b28,
@@ -349,16 +326,12 @@ body {
     );
 }
 
-.rod::before { left: -7px; }
-.rod::after { right: -7px; }
+.rod::before { left: -6px; }
+.rod::after { right: -6px; }
 
-/* Parchment unroll animation */
-
+/* Parchment single page box */
 .paper {
-    height: 0;
-    margin: 0 5px;
-    overflow: hidden;
-
+    margin: 0 4px;
     background: linear-gradient(
         90deg,
         #d7b77a,
@@ -366,170 +339,157 @@ body {
         #fff0cb 90%,
         #d7b77a
     );
-
-    transition: height 1.7s cubic-bezier(.3, .7, .2, 1);
-}
-
-.overlay.show .paper {
-    height: 430px;
 }
 
 .paper-inner {
-    height: 430px;
-    padding: 13px;
-    opacity: 0;
-    transition: opacity .6s ease .9s;
-}
-
-.overlay.show .paper-inner {
-    opacity: 1;
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .letter-frame {
     position: relative;
-    height: 100%;
-    padding: 13px 12px;
+    width: 100%;
+    padding: 10px 8px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
+    gap: 8px;
 
     border: 2px solid #a46a20;
     outline: 1px solid #dfb65b;
-    outline-offset: -7px;
+    outline-offset: -5px;
 
     color: var(--red);
 }
 
 .lotus {
     color: #a56b20;
-    font-size: 26px;
-    line-height: 1.2;
+    font-size: 20px;
+    line-height: 1;
 }
 
 .letter-title {
     font-family: 'Moul', serif;
-    font-size: 18px;
-    line-height: 1.6;
-    padding-top: 14px; 
-    line-height: 2;
-    
-
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .letter-subtitle {
     color: #99631d;
-    font-size: 13px;
-    line-height: 1.7;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.couple-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin: 2px 0;
 }
 
 .couple-name {
     font-family: 'Moulpali', serif;
-    font-size: 25px;
-    line-height: 1.4;
+    font-size: 19px;
+    line-height: 1.2;
 }
 
 .couple-name small {
     display: block;
     font-family: 'Tangerine', cursive;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 700;
     color: #a36b24;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 .ampersand {
     color: #a36b24;
     font-family: 'Tangerine', cursive;
-    font-size: 32px;
-    line-height: 1.1;
+    font-size: 24px;
+    line-height: 1;
 }
 
 /* Continue and close buttons */
-
 .letter-actions {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    margin: 40px auto 20px;
-    padding: 0 10px;
+    gap: 6px;
+    margin-top: 4px;
 }
 
 .continue-btn {
-    max-width: 100%;
-    padding: 8px 12px;
-    border: 1px solid #8f5a1d;
-    background: var(--red);
-    color: #fff0c9;
+    width: 100%;
+    max-width: 290px;
+    padding: 9px 14px;
+    border: 1px solid var(--gold);
+    background: linear-gradient(135deg, #5c1023, #3a0814);
+    color: var(--gold-light);
     font-family: 'Moulpali', serif;
     font-size: 12px;
+    white-space: nowrap;
+    border-radius: 20px;
     cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.continue-btn:hover {
+    background: linear-gradient(135deg, #72142c, #4a0b1a);
+    border-color: #fff1b0;
+    transform: translateY(-1px);
 }
 
 .close-btn {
-    padding: 4px 12px;
+    padding: 2px 10px;
     border: none;
     background: transparent;
     color: #86541d;
     font-family: 'Moulpali', serif;
-    font-size: 12px;
+    font-size: 11px;
     cursor: pointer;
+    text-decoration: underline;
 }
 
 button:focus-visible {
     outline: 3px solid white;
-    outline-offset: 4px;
+    outline-offset: 2px;
 }
 
-@media (max-height: 700px) {
-    .cover-content {
-        padding-top: 35px;
-        padding-bottom: 25px;
-    }
-
-    .title {
-        font-size: 25px;
-
-    }
-
-    .invite-title {
-        font-size: 21px;
-        margin-bottom: 10px;
-    }
-
-    .open-caption {
-        margin-top: 12px;
-    }
-
-    .open-btn {
-        width: 60px;
-        height: 60px;
-        margin-top: 10px;
-    }
-
-    .overlay.show .paper {
-        height: 390px;
-    }
-
-    .paper-inner {
-        height: 390px;
-        padding: 10px;
-    }
-
-    .letter-frame {
-        padding: 13px 10px;
-        padding-top: 20px; 
-    }
+/* Music Toggle Button */
+.music-toggle {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 30;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--red-dark);
+    border: 2px solid var(--gold-light);
+    font-size: 18px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation: none !important;
-        transition-duration: .15s !important;
+        transition-duration: .1s !important;
     }
 }
 </style>
@@ -538,7 +498,6 @@ button:focus-visible {
 <body>
 
 <!-- Traditional Khmer cover -->
-
 <main class="cover">
 
     <!-- Decorative Khmer-inspired gold corners -->
@@ -643,16 +602,14 @@ button:focus-visible {
     </div>
 </main>
 
-<!-- Wedding music: starts after user interaction -->
-
-<audio id="weddingMusic" loop preload="none">
-    <source
-        src="/video/ប្រណម.mp3"
-        type="audio/mpeg">
+<!-- Wedding music -->
+<audio id="weddingMusic" loop preload="metadata">
+    <source src="video/ប្រណម.mp3" type="audio/mpeg">
 </audio>
+<button type="button" id="musicToggle" class="music-toggle" aria-pressed="false" aria-label="Play wedding music" title="Play wedding music">♫</button>
+<script src="js/music.js"></script>
 
-<!-- Animated traditional Khmer scroll -->
-
+<!-- Single-page unrolled scroll letter modal -->
 <div
     class="overlay"
     id="letterOverlay"
@@ -680,7 +637,7 @@ button:focus-visible {
                         សូមគោរពអញ្ជើញចូលរួមជាអធិបតី
                     </div>
 
-                    <div>
+                    <div class="couple-container">
                         <div class="couple-name">
                             ហ៊ុនហ៊ាង
                             <small>Hunheang</small>
@@ -706,7 +663,8 @@ button:focus-visible {
                             type="button"
                             class="continue-btn"
                             id="continueBtn">
-                            បន្តទៅកាន់កម្មវិធីអាពាហ៍ពិពាហ៍
+                            <span>បន្តទៅកាន់កម្មវិធីអាពាហ៍ពិពាហ៍</span>
+                            <span style="font-size: 14px;">➔</span>
                         </button>
 
                         <button
@@ -729,9 +687,7 @@ button:focus-visible {
 <script>
 /* =====================================
    1. PERSONALIZE GUEST NAME
-   Example: index.html?name=លោក%20ដារ៉ា
 ===================================== */
-
 const params = new URLSearchParams(window.location.search);
 const guest = params.get("name");
 
@@ -742,12 +698,12 @@ if (guest && guest.trim()) {
 /* =====================================
    2. OPEN AND CLOSE THE LETTER
 ===================================== */
-
 const openButton = document.getElementById("openInvite");
 const closeButton = document.getElementById("closeBtn");
 const continueButton = document.getElementById("continueBtn");
 const overlay = document.getElementById("letterOverlay");
 const audio = document.getElementById("weddingMusic");
+const musicToggle = document.getElementById("musicToggle");
 
 let previousFocus = null;
 
@@ -757,13 +713,12 @@ function openLetter() {
     overlay.classList.add("show");
     overlay.setAttribute("aria-hidden", "false");
 
-    // Browsers allow audio playback following a user click.
-    audio.play().catch(() => {
-        // The invitation still works if audio cannot play.
-    });
+    if (audio) {
+        audio.play().catch(() => {});
+        if (musicToggle) musicToggle.setAttribute("aria-pressed", "true");
+    }
 
-    // Focus a button after the opening animation begins.
-    window.setTimeout(() => closeButton.focus(), 400);
+    window.setTimeout(() => closeButton.focus(), 300);
 }
 
 function closeLetter() {
@@ -778,14 +733,12 @@ function closeLetter() {
 openButton.addEventListener("click", openLetter);
 closeButton.addEventListener("click", closeLetter);
 
-/* Close when the guest clicks outside the scroll. */
 overlay.addEventListener("click", function (event) {
     if (event.target === overlay) {
         closeLetter();
     }
 });
 
-/* Close using Escape. */
 document.addEventListener("keydown", function (event) {
     if (event.key === "Escape" && overlay.classList.contains("show")) {
         closeLetter();
@@ -793,9 +746,23 @@ document.addEventListener("keydown", function (event) {
 });
 
 /* =====================================
-   3. GO TO THE WEDDING DETAILS PAGE
+   3. MUSIC TOGGLE CONTROLLER
 ===================================== */
+if (musicToggle && audio) {
+    musicToggle.addEventListener("click", () => {
+        if (audio.paused) {
+            audio.play();
+            musicToggle.setAttribute("aria-pressed", "true");
+        } else {
+            audio.pause();
+            musicToggle.setAttribute("aria-pressed", "false");
+        }
+    });
+}
 
+/* =====================================
+   4. NAVIGATION
+===================================== */
 continueButton.addEventListener("click", function () {
     window.location.href = "case.html";
 });
